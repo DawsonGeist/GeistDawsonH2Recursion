@@ -16,7 +16,8 @@ public class baboloni
 	public static float babyRoot(float entry, double tollerance)
 	{
 		dummyGuess= entry/2;
-		calculatedError = entry - (Math.pow(dummyGuess,2));
+		calculatedError = (Math.pow(dummyGuess,2)) - entry;
+		
 		//too much error present
 		if(tollerance<calculatedError)
 		{
@@ -33,7 +34,7 @@ public class baboloni
 	
 	public static void main(String[] args) 
 	{
-		userEntry = 35;
+		userEntry = 125348;
 		error = .90;
 		System.out.println(babyRoot(userEntry,error));
 
