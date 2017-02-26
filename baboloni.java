@@ -7,7 +7,9 @@ public class baboloni
 	public static void main(String[] args) 
 	{
 		double userFirstEntry=0;
-		double userGivenError=0;;
+		double userGivenError=0;
+		double calculatedError=0;
+		
 		Scanner keyboard = new Scanner(System.in);
 		//prompt user
 		System.out.println("Please enter the value you want to find the square root of");
@@ -44,13 +46,11 @@ public class baboloni
 		
 		keyboard.close();
 		rootFinder question1 = new rootFinder(userFirstEntry,userGivenError);
+		// fixing the loop is the last improvement needed to be made
+		question1.calculateRoot();
 		
-		//testing the abylonian method
-		System.out.println("the first guess is " + question1.generateFirstGuess(question1.originalValue));
-		for(int i=1;i<=5;i++)
-		{
-			System.out.println("Guess " + i + "= "+ question1.updateEntry(question1.userEntry));
-		}
+		System.out.println("The calculated root is: "+ question1.userEntry );
+		System.out.println("The error is " + question1.calculateError()+"%");
 	}
 
 }
