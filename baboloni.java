@@ -43,8 +43,14 @@ public class baboloni
 		
 		
 		keyboard.close();
-		rootFinder question1 = new rootFinder(10,2);
-		System.out.println(question1.generateFirstGuess(question1.originalValue));
+		rootFinder question1 = new rootFinder(userFirstEntry,userGivenError);
+		
+		//testing the abylonian method
+		System.out.println("the first guess is " + question1.generateFirstGuess(question1.originalValue));
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println("Guess " + i + "= "+ question1.updateEntry(question1.userEntry));
+		}
 	}
 
 }
